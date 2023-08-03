@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(./img/background.jpg);
+        background-size: cover;
+      }
+
+      .banner {
+        position: relative;
+        max-height: 76rem;
+        max-width: 50rem;
+        height: 100%;
+        width: 100%;
+        border: 1px solid #b3b3b3;
+      }
+
+      .logo {
+        position: absolute;
+        width: 55%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        margin-top: 1.5rem;
+        -webkit-animation: barAppear 1.5s;
+        animation: barAppear 1.5s;
+      }
+
+      .text-collect {
+        position: absolute;
+        width: 90%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        margin-top: 12rem;
+        -webkit-animation: fadeIn 1.7s;
+        animation: fadeIn 1.7s;
+      }
+
+      .text-enjoy {
+        position: absolute;
+        width: 90%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        margin-top: 14rem;
+        -webkit-animation: barAppear 1s;
+        animation: barAppear 1s;
+      }
+
+      .chocos {
+        position: absolute;
+        width: 30%;
+        bottom: 20.5rem;
+        left: 2.5rem;
+        cursor: pointer;
+        -webkit-animation: ingredientAppear 1s;
+        animation: ingredientAppear 1s;
+        z-index: 1;
+      }
+
+      .finger {
+        position: absolute;
+        width: 22%;
+        bottom: 20rem;
+        left: 7rem;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .waffles {
+        position: absolute;
+        width: 35%;
+        bottom: 22rem;
+        right: 2.5rem;
+        cursor: pointer;
+        -webkit-animation: ingredientAppear 1s;
+        animation: ingredientAppear 1s;
+        z-index: 1;
+      }
+
+      .bueno {
+        position: absolute;
+        width: 70%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        bottom: 11rem;
+        -webkit-animation: barAppear 1s;
+        animation: barAppear 1s;
+      }
+
+      .hazelnut {
+        position: absolute;
+        width: 30%;
+        bottom: 1.2rem;
+        left: 2.5rem;
+        cursor: pointer;
+        -webkit-animation: ingredientAppear 1s;
+        animation: ingredientAppear 1s;
+        z-index: 1;
+      }
+
+      .chocolate {
+        position: absolute;
+        width: 30%;
+        bottom: 1.2rem;
+        right: 2.5rem;
+        cursor: pointer;
+        -webkit-animation: ingredientAppear 1s;
+        animation: ingredientAppear 1s;
+        z-index: 1;
+      }
+
+      .button {
+        position: absolute;
+        width: 55%;
+        bottom: 2rem;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        -webkit-animation: barAppear 1s;
+        animation: barAppear 1s;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .blink {
+        -webkit-animation: blinker infinite;
+        animation: blinker infinite;
+        -webkit-animation-duration: 1.2s;
+        animation-duration: 1.2s;
+      }
+
+      @keyframes blinker {
+        0% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+        50% {
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+        }
+        100% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
+      @-webkit-keyframes ingredientAppear {
+        0% {
+          opacity: 0;
+          -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+        }
+        70% {
+          opacity: 1;
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
+      @keyframes ingredientAppear {
+        0% {
+          opacity: 0;
+          -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+        }
+        70% {
+          opacity: 1;
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
+      @-webkit-keyframes barAppear {
+        0% {
+          opacity: 0;
+          -webkit-transform: scale(0.95) translateX(-50%);
+          transform: scale(0.95) translateX(-50%);
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform: scale(1) translateX(-50%);
+          transform: scale(1) translateX(-50%);
+        }
+      }
+
+      @keyframes barAppear {
+        0% {
+          opacity: 0;
+          -webkit-transform: scale(0.95) translateX(-50%);
+          transform: scale(0.95) translateX(-50%);
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform: scale(1) translateX(-50%);
+          transform: scale(1) translateX(-50%);
+        }
+      }
+
+      @-webkit-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .fadeOutAnimation {
+        -webkit-animation: fadeOut;
+        animation: fadeOut;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+      }
+      @-webkit-keyframes fadeOut {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes fadeOut {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .BuenoFinalAnimation {
+        -webkit-animation: barFinalAppear;
+        animation: barFinalAppear;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+      }
+
+      @-webkit-keyframes barFinalAppear {
+        0% {
+          opacity: 0;
+          -webkit-transform: translateX(-50%) scale(1);
+          transform: translateX(-50%) scale(1);
+        }
+        70% {
+          opacity: 1;
+          -webkit-transform: translateX(-53%) rotate(-5deg) scale(1.2);
+          transform: translateX(-53%) rotate(-5deg) scale(1.2);
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform: translateX(-53%) rotate(-10deg) scale(1.3);
+          transform: translateX(-53%) rotate(-10deg) scale(1.3);
+        }
+      }
+
+      @keyframes barFinalAppear {
+        0% {
+          -webkit-transform: translateX(-50%) scale(1);
+          transform: translateX(-50%) scale(1);
+        }
+        50% {
+          -webkit-transform: translateX(-50%) rotate(-5deg);
+          transform: translateX(-50%) rotate(-5deg);
+        }
+        100% {
+          -webkit-transform: translateX(-50%) rotate(-10deg) scale(1.3);
+          transform: translateX(-50%) rotate(-10deg) scale(1.3);
+        }
+      }
+
+      @media screen and (min-width: 360px) {
+        .text-collect {
+          margin-top: 14rem;
+        }
+
+        .text-enjoy {
+          margin-top: 15rem;
+        }
+
+        .chocos {
+          width: 32%;
+          bottom: 27rem;
+        }
+
+        .finger {
+          width: 22%;
+          bottom: 26.5rem;
+        }
+
+        .waffles {
+          width: 37%;
+          bottom: 28rem;
+        }
+
+        .bueno {
+          bottom: 15.5rem;
+        }
+
+        .hazelnut {
+          bottom: 3rem;
+        }
+
+        .chocolate {
+          width: 32%;
+          bottom: 3rem;
+        }
+
+        .button {
+          bottom: 2.5rem;
+        }
+      }
+      @media screen and (min-width: 500px) {
+        .logo {
+          max-width: 40%;
+        }
+
+        .text-collect {
+          margin-top: 17rem;
+          max-width: 80%;
+        }
+
+        .text-enjoy {
+          margin-top: 17rem;
+          max-width: 85%;
+        }
+
+        .chocos {
+          max-width: 30%;
+          bottom: 27rem;
+        }
+
+        .finger {
+          max-width: 18%;
+          left: 10rem;
+          bottom: 26.5rem;
+        }
+
+        .waffles {
+          max-width: 35%;
+          bottom: 29rem;
+        }
+
+        .bueno {
+          bottom: 14.5rem;
+          max-width: 57%;
+        }
+
+        .hazelnut {
+          max-width: 32%;
+          bottom: 2rem;
+        }
+
+        .chocolate {
+          max-width: 32%;
+          bottom: 2rem;
+        }
+
+        .button {
+          bottom: 2.5rem;
+          max-width: 45%;
+        }
+      }
+    </style>
+    <title>Bueno banner</title>
+    <!-- <script src="mraid.js"></script> -->
+  </head>
+  <body>
+    <div class="banner">
+      <img
+        class="hide logo"
+        src="https://gallery.hybrid.ai/examples/bueno-images/logo.png"
+        alt="logo"
+      />
+      <img
+        class="hide text-collect"
+        src="https://gallery.hybrid.ai/examples/bueno-images/text-collect.png"
+        alt="text-collect"
+      />
+      <img
+        class="hide text-enjoy"
+        src="https://gallery.hybrid.ai/examples/bueno-images/text-enjoy.png"
+        alt="text-enjoy"
+      />
+      <img
+        class="chocos hide ingredient"
+        src="https://gallery.hybrid.ai/examples/bueno-images/chocos.png"
+        alt="chocos hide ingredient"
+      />
+      <img
+        class="finger hide"
+        src="https://gallery.hybrid.ai/examples/bueno-images/finger.png"
+        alt="finger"
+      />
+      <img
+        class="hide ingredient waffles"
+        src="https://gallery.hybrid.ai/examples/bueno-images/waffels.png"
+        alt="ingredient waffles"
+      />
+      <img
+        class="bueno hide"
+        src="https://gallery.hybrid.ai/examples/bueno-images/bueno_border.png"
+        alt="bueno"
+      />
+      <img
+        class="hazelnut hide ingredient"
+        src="https://gallery.hybrid.ai/examples/bueno-images/hazelnuts.png"
+        alt="hazelnut ingredient"
+      />
+      <img
+        class="chocolate hide ingredient"
+        src="https://gallery.hybrid.ai/examples/bueno-images/chocolate.png"
+        alt="chocolate ingredient"
+      />
+      <img
+        class="button hide"
+        src="https://gallery.hybrid.ai/examples/bueno-images/button.png"
+        alt="learn more button"
+      />
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
